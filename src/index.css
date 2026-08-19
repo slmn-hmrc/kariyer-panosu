@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Tasarım Dili — "Arşiv Defteri"
+   Sıcak mürekkep siyahı zemin, kemik beyazı tipografi, oker aksan.
+   Başlıklarda Fraunces (display serif), metinde Public Sans,
+   metaveri etiketlerinde JetBrains Mono kullanılır.
+   ========================================================================== */
+
+@theme {
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Zemin ve yüzeyler */
+  --color-ink-950: #0d0b0a;
+  --color-ink-900: #12100e;
+  --color-ink-850: #17140f;
+  --color-ink-800: #1c1813;
+  --color-ink-700: #2a241d;
+  --color-ink-600: #3a322a;
+
+  /* Metin */
+  --color-bone-50: #f5f0e6;
+  --color-bone-100: #e8e2d8;
+  --color-bone-300: #b8afa2;
+  --color-bone-500: #8a8078;
+
+  /* Aksan */
+  --color-ochre-300: #e8b072;
+  --color-ochre-400: #d98c3f;
+  --color-ochre-500: #b8722c;
+
+  /* Durum renkleri — palete uyumlu, soğuk/sıcak dengeli */
+  --color-slateblue: #7d9cb8;
+  --color-sage: #8aab72;
+  --color-brick: #c26a56;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-ink-900);
+  color: var(--color-bone-100);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Kağıt dokusu hissi veren ince grain katmanı */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Sayfanın üst kısmına düşen sıcak ışık */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    70rem 34rem at 12% -8%,
+    rgba(217, 140, 63, 0.09),
+    transparent 62%
+  );
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Yüklenişte kademeli beliriş */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-rise {
+  animation: rise 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise {
+    animation: none;
+  }
+}
+
+::selection {
+  background: var(--color-ochre-400);
+  color: var(--color-ink-950);
+}
+
+/* İnce kaydırma çubuğu */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-700);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink-600);
+}
