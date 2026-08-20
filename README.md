@@ -7,7 +7,7 @@
 sayfa uygulamasıdır (SPA). Başvurduğunuz pozisyonu kaydeder, hangi aşamada olduğunu
 gösterir ve süreç ilerledikçe durumunu güncellemenize izin verir.
 
-**Canlı demo:** _(Netlify bağlantısı teslim formunda paylaşılmıştır)_
+**Canlı demo:** https://kariyer-panosu.netlify.app
 
 ## Ekran görüntüleri
 
