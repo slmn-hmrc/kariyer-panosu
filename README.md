@@ -9,6 +9,24 @@ gösterir ve süreç ilerledikçe durumunu güncellemenize izin verir.
 
 **Canlı demo:** _(Netlify bağlantısı teslim formunda paylaşılmıştır)_
 
+## Ekran görüntüleri
+
+![Pano](screenshots/01-pano.png)
+*Pano — istatistik şeridi, durum filtreleri, arama ve kayıt listesi*
+
+![Kayıt ekleme](screenshots/02-kayit-ekleme.png)
+*Yeni başvuru kaydı formu (Ekleme)*
+
+![Güncelleme ve filtre](screenshots/03-guncelleme-filtre.png)
+*Kayıt eklendikten sonra durumu "Mülakat" aşamasına ilerletildi ve aynı duruma göre filtrelendi (Güncelleme + Listeleme)*
+
+![Silme onayı](screenshots/04-silme-onayi.png)
+*Silme işlemi onay penceresi (Silme)*
+
+<img src="screenshots/05-mobil.png" width="280">
+
+*Mobil genişlikteki duyarlı görünüm*
+
 ## Yönergedeki dört işlem
 
 | İşlem | Uygulamadaki karşılığı |
